@@ -1,6 +1,46 @@
 body {
-    background-color: #BEDE87;
-    font-family: Verdana, sans-serif;
-    margin: 0;
-    color: #5d4037;
+    background-color: #e9efdf;
+    font-family: Copperplate, sans-serif;
+    margin: 0px;
+    color: #1a1919;
   }
+
+  main{
+    margin: 20px;
+  }
+
+  .navbar ul{
+    list-style-type: none; 
+    background-color: #a5dd44;
+    position: fixed;
+    padding: 0px;
+    margin: 20px;
+    width:110px;
+    float: left;
+    border-radius: 10px;
+
+  }
+
+  .navbar a{
+    color: rgb(33, 32, 32);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    margin: 5px 10px;
+    text-align: left;
+  }
+
+  .navbar a:hover{
+    background-color: #839760;
+  }
+
+  .navbar li{
+    display:  block;
+  }
+
+  .container{
+    text-align: center;
+  }
+
+
+  
