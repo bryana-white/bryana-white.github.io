@@ -58,6 +58,14 @@ body {
     text-align: center;
   }
 
+  .box{
+    top: -50%;
+    right: 100%;
+    margin-left: 380px;
+    margin-top: 80px;
+    
+  }
+
   .home{
     display: flex;
     justify-content: center;
