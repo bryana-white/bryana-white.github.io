@@ -3,10 +3,12 @@ body {
     background-color: #eecb57;
     font-family: Copperplate, sans-serif;
     margin: 0px;
-    color: #ed8f6f;
+    color: #ef6940;
   }
 
   .container{
+   
+
     width: 300px;
     height: 280px;
     top: 30%;
@@ -33,8 +35,11 @@ body {
   }
 
   .container2{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 10px;  
     width: 100px;
-    height: 100px;
+    height: 80px;
     top: 30%;
     right: 30%;
     margin-right: -180px;
@@ -49,7 +54,7 @@ body {
   }
 
   a{
-    color: white;
+    color: rgb(90, 72, 18);
     text-align: center;
   }
 
@@ -59,8 +64,8 @@ body {
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color: rgb(193, 231, 98);
-    border: 5px solid rgb(194, 155, 233);
+    background-color: rgb(143, 185, 36);
+    border: 5px dotted rgb(12, 11, 14);
     border-radius: 150px;
     color:white;
     animation: left-to-right 20s infinite alternate;
