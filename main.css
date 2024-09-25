@@ -1,52 +1,71 @@
-body {
-  background-color: #e9efdf;
-  font-family: Copperplate, sans-serif;
-  margin: 0px;
-  color: #1a1919;
+body{
+  margin: 0 auto;
+  font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: greenyellow;
 }
 
-main{
-  margin: 20px;
-}
-
-.navbar ul{
-  list-style-type: none; 
-  background-color: #a5dd44;
+#header{
   position: fixed;
-  padding: 0px;
-  margin: 30px;
-  width:150px;
-  float: left;
-  border-radius: 10px;
-
+  top: 20px;
 }
 
-.navbar a{
-  color: rgb(33, 32, 32);
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 6rem;
+}
+
+.link {
+  background-color: black;
+  color: yellowgreen;
   text-decoration: none;
-  padding: 15px;
-  display: block;
-  margin: 5px 10px;
-  text-align: left;
+  padding: 0.5rem 1rem;
+  border-style: dotted;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-.navbar a:hover{
-  background-color: #839760;
+a{
+  color: greenyellow;
 }
 
-.navbar li{
-  display:  block;
+a:hover{
+  color: white;
 }
 
 .container{
-  text-align: center;
-  background-color: white;
-  border: 5px solid black;
-  width: 600px;
-  margin-left: 230px;
-  margin-top: 50px;
-  
-
+  animation-duration: 3s;
+  animation-name: slidein;
+text-align: center;
+  display: inline-block;
+  border-style: dotted;
+  background-color: black;
+  font-size: 20px;
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
+@keyframes slidein {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+#footer{
+  position: fixed;
+  bottom: 20px;
+}
 
