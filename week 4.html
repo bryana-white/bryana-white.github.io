@@ -34,8 +34,7 @@
   border-style: dotted;
   transition: all 0.3s ease;
   margin-right: 50%;
-  display:inline-flex;
-  
+  display: inline-block;
 }
 
 a{
@@ -47,30 +46,36 @@ a{
 a:hover{
   color: white;
 }
-    .title{
+    
+.title{
   font-size: 18px;
-  min-height:70vh;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        margin-bottom: 3rem;
-    }
+  min-height:88vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 1rem;
+    
+}
 
 .response{
   margin: 0 auto;
   padding:1em;
-  max-width: 800px;
+  max-width: 700px;
   background-color: black;
   border-style: dotted;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
  
 }
 
 #footer{
   position: fixed;
   bottom: 20px;
+}
+
+canvas {
+  margin: 0;
 }
 
 </style>
@@ -87,7 +92,8 @@ a:hover{
           ⢰⣿⡟⠁⠀⠀⠀⣷⠀⠀⠀⠀⠀⠈⣿⣿Four⣟⣀⡤⠖⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀
           ⠘⠿⣧⣀⡠⠤⢾⣿⣷⠤⠄⠀⠀⠀⢹⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
           ⠀⠀⠀⠉⠀⠀⠀⡿⠁⠀⠀⠀⠀⠀⠈⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          ⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</header>
+          ⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </header>
          </div>
     
          <div class="title">
@@ -100,9 +106,8 @@ a:hover{
 </p>
 <P>It would appear that the main language used is Javascript, and this allows the user to control the text with their mouse.</P>
     </div>
-    </div>
 
-    <div><a href="index.html" class="links">Home</a>
+    <div><a href="index.html" class="link">Home</a>
     </div>
 
     <div id="footer">
