@@ -2,8 +2,6 @@
 <head>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-
 </head>
 
 <style>
@@ -21,10 +19,11 @@
 
 .links {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 6rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .link {
@@ -34,30 +33,34 @@
   padding: 0.5rem 1rem;
   border-style: dotted;
   transition: all 0.3s ease;
-  display: inline-block;
+  margin-right: 50%;
+  display:inline-flex;
+  
 }
 
 a{
   color: greenyellow;
+ 
 }
+
 
 a:hover{
   color: white;
 }
-    title{
-  font-size: 30px;
-  min-height: 50vh;
-        display: flex;
+    .title{
+  font-size: 18px;
+  min-height:65vh;
+        display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
 .response{
   margin: 0 auto;
-  padding: 2em;
+  padding:1em;
   max-width: 800px;
   background-color: black;
   border-style: dotted;
