@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+    <style>
+        body { margin:0 ; overflow:hidden ; background: black; color: greenyellow; font-family: 'Courier New', Courier, monospace; overflow-y:scroll}
+        #sb{position:relative;height:9000px;display:block}#bar{width:100%;height:0;background-color:black;text-align:center}#c{display:flex;align-items:center;height:calc(100vh - 45px);position:fixed;top:45px;left:0;width:100%;overflow:hidden;white-space:nowrap;padding:0}#bR,#tR{font-size:55vh;white-space:nowrap;position:absolute}#tR{top:0;left:0;line-height:100%;padding-left:100%}#bR{text-align:right;top:40vh;right:0;padding-right:100%}#bR span{min-width:100px}header{position:fixed;width:100%}
+        a { color:#58aa38 ; text-decoration:none }
+    
+   </style>
+
+   <!-- scrolling link  -->
+    <div id="sb"></div>
+    <div id="c"><div id="tR"></div><div id="bR"></div><div id="bar">[scroll]</div>
+
+    <!-- <div id=wrapper style=font-size:24px;text-align:center><h1>Hello</h1>
+        <div><input type=checkbox>0000<input type=checkbox>rot<input type=checkbox>journal in cafe<input type=checkbox>ice coffee<input type=checkbox>make assets for boss</div> -->
+
+</div>
+
+ <!-- <div id=wrapper style=font-size:24px;text-align:center><h1>Hello</h1>
+        <div><input type=checkbox>0000<input type=checkbox>rot<input type=checkbox>journal in cafe<input type=checkbox>ice coffee<input type=checkbox>make assets for boss</div> -->
+        
+        <script>
+
+let u=0;let phrase="Enter";let rL=["scroll"];const mR=Math.random;const mF=Math.floor;const w=window;const l=document.getElementById("bar");const de=document.documentElement;const m=8000-de.clientHeight*(de.clientHeight/de.clientWidth);const tr=document.getElementById("tR");const br=document.getElementById("bR");w.addEventListener('scroll',function(){requestAnimationFrame(function(){if(w.innerWidth>0){while(br.offsetWidth<w.innerWidth*20){let ns=document.createElement("span");ns.appendChild(document.createTextNode(phrase));br.appendChild(ns);tr.appendChild(ns.cloneNode(true))}}if(w.scrollY>m/2){u=1;l.innerHTML="["+rL[mF(mR()*rL.length)]+"]"}if(w.scrollY==0&u==1){phrase=dc(phrase);br.innerHTML='';tr.innerHTML='';u=0}let r=(w.scrollY)/m;l.style.height="calc("+(r*100).toString()+"vh - 45px)";doof(fd(r));tr.style.left= -w.scrollY+"px";tr.style.fontSize=55-(r*55)+"vh"})});const doof=function(f){br.style.fontSize=f[0];br.style.top="calc("+f[1]+" - 45px)";br.style.right=f[2]};const fd=(r)=>[((55-(r*55))<1?1:(55-(r*55)))+"vh",40+(r*60)+"vh",mF(-w.scrollY)+"px"];const dc=(s)=>{let a=s.split(""),l=a.length,o=a.splice(mF(mR()*l),3);o.forEach(function(i){a.splice(mF(mR()*l),0,i)});return a.join("")};
+        
+        
+        //    document.querySelectorAll('div:not(#wrapper)').forEach((e,i)=>{
+        //     e.style.cssText = `position:relative;white-space:nowrap;display:inline-block;`;let w = e.getBoundingClientRect().width;
+        //     e.animate([{transform:`translateX(${-w}px)`},{transform:`translateX(${window.innerWidth}px)`}],{duration: (Math.random()*3+2)*10000,iterations:Infinity,direction:i%2==0?"alternate":"alternate-reverse",delay:-Math.random()*20000
+        //     });});
+        // document.querySelectorAll('input').forEach((e)=>{e.style.cssText=`height:1.6em;width:1.6em;margin:14px;`}); 
+
+            
+        </script>
+</body>
+
+
+</html>
