@@ -8,8 +8,13 @@
 
     <style>
         body { margin:0 ; overflow:hidden ; background: black; color: greenyellow; font-family: 'Courier New', Courier, monospace; overflow-y:scroll}
-        #sb{position:relative;height:9000px;display:block}#bar{width:100%;height:0;background-color:black;text-align:center}#c{display:flex;align-items:center;height:calc(100vh - 45px);position:fixed;top:45px;left:0;width:100%;overflow:hidden;white-space:nowrap;padding:0}#bR,#tR{font-size:55vh;white-space:nowrap;position:absolute}#tR{top:0;left:0;line-height:100%;padding-left:100%}#bR{text-align:right;top:40vh;right:0;padding-right:100%}#bR span{min-width:100px}header{position:fixed;width:100%}
-        a { color:#58aa38 ; text-decoration:none }
+        #sb{position:relative;height:9000px;display:block}#bar{width:100%;height:0;background-color:black;text-align:center}
+        #c{display:flex;align-items:center;height:calc(100vh - 45px);position:fixed;top:45px;left:0;width:100%;overflow:hidden;white-space:nowrap;padding:0}
+        #bR,#tR{font-size:55vh;white-space:nowrap;position:absolute}
+        #tR{top:0;left:0;line-height:100%;padding-left:100%}
+        #bR{text-align:right;top:40vh;right:0;padding-right:100%}
+        #bR span{min-width:100px}header{position:fixed;width:100%} 
+        a { color:#58aa38 ; text-decoration:none };
     
    </style>
 
@@ -17,24 +22,234 @@
     <div id="sb"></div>
     <div id="c"><div id="tR"></div><div id="bR"></div><div id="bar">[scroll]</div>
 
-    <!-- <div id=wrapper style=font-size:24px;text-align:center><h1>Hello</h1>
-        <div><input type=checkbox>0000<input type=checkbox>rot<input type=checkbox>journal in cafe<input type=checkbox>ice coffee<input type=checkbox>make assets for boss</div> -->
-
 </div>
-
- <!-- <div id=wrapper style=font-size:24px;text-align:center><h1>Hello</h1>
-        <div><input type=checkbox>0000<input type=checkbox>rot<input type=checkbox>journal in cafe<input type=checkbox>ice coffee<input type=checkbox>make assets for boss</div> -->
         
         <script>
 
-let u=0;let phrase="Enter";let rL=["scroll"];const mR=Math.random;const mF=Math.floor;const w=window;const l=document.getElementById("bar");const de=document.documentElement;const m=8000-de.clientHeight*(de.clientHeight/de.clientWidth);const tr=document.getElementById("tR");const br=document.getElementById("bR");w.addEventListener('scroll',function(){requestAnimationFrame(function(){if(w.innerWidth>0){while(br.offsetWidth<w.innerWidth*20){let ns=document.createElement("span");ns.appendChild(document.createTextNode(phrase));br.appendChild(ns);tr.appendChild(ns.cloneNode(true))}}if(w.scrollY>m/2){u=1;l.innerHTML="["+rL[mF(mR()*rL.length)]+"]"}if(w.scrollY==0&u==1){phrase=dc(phrase);br.innerHTML='';tr.innerHTML='';u=0}let r=(w.scrollY)/m;l.style.height="calc("+(r*100).toString()+"vh - 45px)";doof(fd(r));tr.style.left= -w.scrollY+"px";tr.style.fontSize=55-(r*55)+"vh"})});const doof=function(f){br.style.fontSize=f[0];br.style.top="calc("+f[1]+" - 45px)";br.style.right=f[2]};const fd=(r)=>[((55-(r*55))<1?1:(55-(r*55)))+"vh",40+(r*60)+"vh",mF(-w.scrollY)+"px"];const dc=(s)=>{let a=s.split(""),l=a.length,o=a.splice(mF(mR()*l),3);o.forEach(function(i){a.splice(mF(mR()*l),0,i)});return a.join("")};
+            
+
+let u=0;let word="Enter";let rL=["scroll"];const mR=Math.random;const mF=Math.floor;const w=window;const l=document.getElementById("bar");const de=document.documentElement;const m=8000-de.clientHeight*(de.clientHeight/de.clientWidth);const tr=document.getElementById("tR");const br=document.getElementById("bR");w.addEventListener('scroll',function(){requestAnimationFrame(function(){if(w.innerWidth>0){while(br.offsetWidth<w.innerWidth*20){let ns=document.createElement("span");ns.appendChild(document.createTextNode(phrase));br.appendChild(ns);tr.appendChild(ns.cloneNode(true))}}if(w.scrollY>m/2){u=1;l.innerHTML="["+rL[mF(mR()*rL.length)]+"]"}if(w.scrollY==0&u==1){phrase=dc(phrase);br.innerHTML='';tr.innerHTML='';u=0}let r=(w.scrollY)/m;l.style.height="calc("+(r*100).toString()+"vh - 45px)";doof(fd(r));tr.style.left= -w.scrollY+"px";tr.style.fontSize=55-(r*55)+"vh"})});const doof=function(f){br.style.fontSize=f[0];br.style.top="calc("+f[1]+" - 45px)";br.style.right=f[2]};const fd=(r)=>[((55-(r*55))<1?1:(55-(r*55)))+"vh",40+(r*60)+"vh",mF(-w.scrollY)+"px"];const dc=(s)=>{let a=s.split(""),l=a.length,o=a.splice(mF(mR()*l),3);o.forEach(function(i){a.splice(mF(mR()*l),0,i)});return a.join("")};
+
+let phrases = [
+    "Hello?",
+    "Goodbye.",
+];
+
+// Modify the existing variables
+let currentPhraseIndex = 0;
+let phrase = phrases[currentPhraseIndex];
+
+// Add a function to change the text
+
+// hopefully this changes the scroll text 
+
+const changeText = () => {
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+    word = words[currentWordIndex];
+    
+    // Clear existing text
+    br.innerHTML = '';
+    tr.innerHTML = '';
+    
+    // Refill with new text
+    while (br.offsetWidth < w.innerWidth * 20) {
+        let ns = document.createElement("span");
+        ns.appendChild(document.createTextNode(phrase));
+        br.appendChild(ns);
+        tr.appendChild(ns.cloneNode(true));
+    }
+};
+
+// Modify the scroll event listener
+w.addEventListener('scroll', function() {
+    requestAnimationFrame(function() {
+        // Existing code remains the same
+        if (w.innerWidth > 0) {
+            while (br.offsetWidth < w.innerWidth * 20) {
+                let ns = document.createElement("span");
+                ns.appendChild(document.createTextNode(phrase));
+                br.appendChild(ns);
+                tr.appendChild(ns.cloneNode(true));
+            }
+        }
         
+        // Add text changing based on scroll position
+        let scrollPercentage = (w.scrollY / m) * 100;
         
-        //    document.querySelectorAll('div:not(#wrapper)').forEach((e,i)=>{
-        //     e.style.cssText = `position:relative;white-space:nowrap;display:inline-block;`;let w = e.getBoundingClientRect().width;
-        //     e.animate([{transform:`translateX(${-w}px)`},{transform:`translateX(${window.innerWidth}px)`}],{duration: (Math.random()*3+2)*10000,iterations:Infinity,direction:i%2==0?"alternate":"alternate-reverse",delay:-Math.random()*20000
-        //     });});
-        // document.querySelectorAll('input').forEach((e)=>{e.style.cssText=`height:1.6em;width:1.6em;margin:14px;`}); 
+        // Change text at certain scroll percentages
+        if (scrollPercentage > 20 && scrollPercentage < 25) changeText();
+        if (scrollPercentage > 40 && scrollPercentage < 45) changeText();
+        if (scrollPercentage > 60 && scrollPercentage < 65) changeText();
+        if (scrollPercentage > 80 && scrollPercentage < 85) changeText();
+        
+        // Rest of the existing code
+        if (w.scrollY > m/2) {
+            u = 1;
+            l.innerHTML = "[" + rL[mF(mR() * rL.length)] + "]";
+        }
+        
+        if (w.scrollY == 0 && u == 1) {
+            phrase = dc(phrase);
+            br.innerHTML = '';
+            tr.innerHTML = '';
+            u = 0;
+        }
+        
+        let r = (w.scrollY) / m;
+        l.style.height = "calc(" + (r * 100).toString() + "vh - 45px)";
+        doof(fd(r));
+        tr.style.left = -w.scrollY + "px";
+        tr.style.fontSize = 55 - (r * 55) + "vh";
+    });
+});
+// First, let's add an array of colors to cycle through
+const colors = [
+    '#39FF14',  // Neon Green
+    '#FDFEFE',  // White
+    '#FF3131',  // Neon Red
+    '#FFF01F',  // Yellow
+    '#4169E1'   // Royal Blue
+];
+
+let currentColorIndex = 0;
+
+// Add a function to change color
+const changeColor = () => {
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    const newColor = colors[currentColorIndex];
+    
+    // Apply the color to both text rows
+    tr.style.color = newColor;
+    br.style.color = newColor;
+    c.style.color = newColor;
+    tR.style.color = newColor;
+    bR.style.color = newColor;
+    bar.style.color = newColor;
+    
+    // Optionally, change the progress bar color too
+    l.style.color = newColor;
+};
+
+// Update the scroll event listener
+w.addEventListener('scroll', function() {
+    requestAnimationFrame(function() {
+   
+        // Add color changing based on scroll position
+        let scrollPercentage = (w.scrollY / m) * 100;
+        
+        // Smooth color transition based on scroll position
+        const colorIndex = Math.floor((scrollPercentage / 100) * colors.length);
+        const nextColorIndex = (colorIndex + 1) % colors.length;
+        
+        const colorProgress = (scrollPercentage / 100) * colors.length - colorIndex;
+        
+        const currentColor = colors[colorIndex];
+        const nextColor = colors[nextColorIndex];
+        
+        const interpolatedColor = interpolateColors(currentColor, nextColor, colorProgress);
+        
+    // This code changes the color on all the elements 
+        tr.style.color = interpolatedColor;
+        br.style.color = interpolatedColor;
+        c.style.color = interpolatedColor;
+       tR.style.color = interpolatedColor;
+       bR.style.color = interpolatedColor;
+        bar.style.color = interpolatedColor;
+        
+        // Rest of existing code...
+    });
+});
+
+// Helper function to interpolate between two colors
+function interpolateColors(color1, color2, factor) {
+    if (factor <= 0) return color1;
+    if (factor >= 1) return color2;
+
+    const hex1 = color1.replace('#', '');
+    const hex2 = color2.replace('#', '');
+
+    const r1 = parseInt(hex1.substr(0, 2), 16);
+    const g1 = parseInt(hex1.substr(2, 2), 16);
+    const b1 = parseInt(hex1.substr(4, 2), 16);
+
+    const r2 = parseInt(hex2.substr(0, 2), 16);
+    const g2 = parseInt(hex2.substr(2, 2), 16);
+    const b2 = parseInt(hex2.substr(4, 2), 16);
+
+    const r = Math.round(r1 + factor * (r2 - r1));
+    const g = Math.round(g1 + factor * (g2 - g1));
+    const b = Math.round(b1 + factor * (b2 - b1));
+
+    return `#${(r << 16 | g << 8 | b).toString(16).padStart(6, '0')}`;
+}
+
+// Optional: Add a CSS transition for smoother color changes
+const style = document.createElement('style');
+style.textContent = `
+    #tR, #bR {
+        transition: color 0.5s ease;
+    }
+`;
+document.head.appendChild(style);
+
+// First, let's get all the elements
+const container = document.getElementById('c');
+const topRow = document.getElementById('tR');
+const bottomRow = document.getElementById('bR');
+const scrollBar = document.getElementById('bar');
+
+// Array of font families - add or remove as needed
+const fonts = [
+    "'Courier New', monospace",
+    "'Press Start 2P', cursive",
+    "'VT323', monospace",
+    "'Roboto Mono', monospace",
+    "'Source Code Pro', monospace"
+];
+
+// Add Google Fonts link
+const googleFontsLink = document.createElement('link');
+googleFontsLink.rel = 'stylesheet';
+googleFontsLink.href = 'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Roboto+Mono&family=Source+Code+Pro&display=swap';
+document.head.appendChild(googleFontsLink);
+
+// Basic function to change font of a specific element
+const changeElementFont = (element, fontFamily) => {
+    element.style.fontFamily = fontFamily;
+};
+
+// Function to change fonts randomly for each element
+const changeRandomFonts = () => {
+    [topRow, bottomRow, scrollBar].forEach(element => {
+        const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+        changeElementFont(element, randomFont);
+    });
+};
+
+// Function to cycle through fonts
+let currentFontIndex = 0;
+const cycleFonts = () => {
+    currentFontIndex = (currentFontIndex + 1) % fonts.length;
+    changeAllFonts(fonts[currentFontIndex]);
+};
+
+// Update the scroll event listener
+w.addEventListener('scroll', function() {
+    requestAnimationFrame(function() {
+        // Existing code remains...
+        
+        let scrollPercentage = (w.scrollY / m) * 100;
+        
+        // Change fonts at specific scroll positions
+        if (scrollPercentage > 20 && scrollPercentage < 25) cycleFonts();
+        if (scrollPercentage > 40 && scrollPercentage < 45) changeRandomFonts();
+        if (scrollPercentage > 60 && scrollPercentage < 65) cycleFonts();
+        if (scrollPercentage > 80 && scrollPercentage < 85) changeRandomFonts();
+        
+       
+    });
+});
+
 
             
         </script>
