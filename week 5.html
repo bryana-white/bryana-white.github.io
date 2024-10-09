@@ -42,11 +42,7 @@ let phrase = phrases[currentPhraseIndex];
 
 const changeText = () => {
     currentWordIndex = (currentWordIndex + 1) % words.length;
-    word = words[currentWordIndex];
-    
-    // // Clear existing text
-    // br.innerHTML = '';
-    // tr.innerHTML = '';
+    word = words[currentWordIndex]
     
  };
 
@@ -107,7 +103,6 @@ const changeColor = () => {
     currentColorIndex = (currentColorIndex + 1) % colors.length;
     const newColor = colors[currentColorIndex];
     
-    // Apply the color to both text rows
     tr.style.color = newColor;
     br.style.color = newColor;
     c.style.color = newColor;
@@ -117,7 +112,7 @@ const changeColor = () => {
     
 };
 
-// Update the scroll event listener
+
 w.addEventListener('scroll', function() {
     requestAnimationFrame(function() {
    
@@ -148,7 +143,7 @@ w.addEventListener('scroll', function() {
     });
 });
 
-// Helper function to interpolate between two colors
+// This helps interpolate between two colors
 function interpolateColors(color1, color2, factor) {
     if (factor <= 0) return color1;
     if (factor >= 1) return color2;
