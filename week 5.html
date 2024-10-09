@@ -14,20 +14,18 @@
         #tR{top:0;left:0;line-height:100%;padding-left:100%}
         #bR{text-align:right;top:40vh;right:0;padding-right:100%}
         #bR span{min-width:100px}header{position:fixed;width:100%} 
-        a { color:#58aa38 ; text-decoration:none };
-    
+       
    </style>
 
    <!-- scrolling link  -->
     <div id="sb"></div>
     <div id="c"><div id="tR"></div><div id="bR"></div><div id="bar">[scroll]</div>
-
 </div>
         
         <script>
 
             
-
+// This code was referenced from (https://taper.badquar.to/11/beauty_and_grace.html by Zach Whalen)
 let u=0;let word="Enter";let rL=["scroll"];const mR=Math.random;const mF=Math.floor;const w=window;const l=document.getElementById("bar");const de=document.documentElement;const m=8000-de.clientHeight*(de.clientHeight/de.clientWidth);const tr=document.getElementById("tR");const br=document.getElementById("bR");w.addEventListener('scroll',function(){requestAnimationFrame(function(){if(w.innerWidth>0){while(br.offsetWidth<w.innerWidth*20){let ns=document.createElement("span");ns.appendChild(document.createTextNode(phrase));br.appendChild(ns);tr.appendChild(ns.cloneNode(true))}}if(w.scrollY>m/2){u=1;l.innerHTML="["+rL[mF(mR()*rL.length)]+"]"}if(w.scrollY==0&u==1){phrase=dc(phrase);br.innerHTML='';tr.innerHTML='';u=0}let r=(w.scrollY)/m;l.style.height="calc("+(r*100).toString()+"vh - 45px)";doof(fd(r));tr.style.left= -w.scrollY+"px";tr.style.fontSize=55-(r*55)+"vh"})});const doof=function(f){br.style.fontSize=f[0];br.style.top="calc("+f[1]+" - 45px)";br.style.right=f[2]};const fd=(r)=>[((55-(r*55))<1?1:(55-(r*55)))+"vh",40+(r*60)+"vh",mF(-w.scrollY)+"px"];const dc=(s)=>{let a=s.split(""),l=a.length,o=a.splice(mF(mR()*l),3);o.forEach(function(i){a.splice(mF(mR()*l),0,i)});return a.join("")};
 
 let phrases = [
@@ -39,7 +37,6 @@ let phrases = [
 let currentPhraseIndex = 0;
 let phrase = phrases[currentPhraseIndex];
 
-// Add a function to change the text
 
 // hopefully this changes the scroll text 
 
@@ -47,18 +44,11 @@ const changeText = () => {
     currentWordIndex = (currentWordIndex + 1) % words.length;
     word = words[currentWordIndex];
     
-    // Clear existing text
-    br.innerHTML = '';
-    tr.innerHTML = '';
+    // // Clear existing text
+    // br.innerHTML = '';
+    // tr.innerHTML = '';
     
-    // Refill with new text
-    while (br.offsetWidth < w.innerWidth * 20) {
-        let ns = document.createElement("span");
-        ns.appendChild(document.createTextNode(phrase));
-        br.appendChild(ns);
-        tr.appendChild(ns.cloneNode(true));
-    }
-};
+ };
 
 // Modify the scroll event listener
 w.addEventListener('scroll', function() {
@@ -125,8 +115,6 @@ const changeColor = () => {
     bR.style.color = newColor;
     bar.style.color = newColor;
     
-    // Optionally, change the progress bar color too
-    l.style.color = newColor;
 };
 
 // Update the scroll event listener
@@ -144,10 +132,11 @@ w.addEventListener('scroll', function() {
         
         const currentColor = colors[colorIndex];
         const nextColor = colors[nextColorIndex];
-        
+    
+        // 'interpolated created that smooth transition between the colors'
         const interpolatedColor = interpolateColors(currentColor, nextColor, colorProgress);
         
-    // This code changes the color on all the elements 
+    
         tr.style.color = interpolatedColor;
         br.style.color = interpolatedColor;
         c.style.color = interpolatedColor;
@@ -155,7 +144,7 @@ w.addEventListener('scroll', function() {
        bR.style.color = interpolatedColor;
         bar.style.color = interpolatedColor;
         
-        // Rest of existing code...
+
     });
 });
 
@@ -180,77 +169,7 @@ function interpolateColors(color1, color2, factor) {
     const b = Math.round(b1 + factor * (b2 - b1));
 
     return `#${(r << 16 | g << 8 | b).toString(16).padStart(6, '0')}`;
-}
-
-// Optional: Add a CSS transition for smoother color changes
-const style = document.createElement('style');
-style.textContent = `
-    #tR, #bR {
-        transition: color 0.5s ease;
-    }
-`;
-document.head.appendChild(style);
-
-// First, let's get all the elements
-const container = document.getElementById('c');
-const topRow = document.getElementById('tR');
-const bottomRow = document.getElementById('bR');
-const scrollBar = document.getElementById('bar');
-
-// Array of font families - add or remove as needed
-const fonts = [
-    "'Courier New', monospace",
-    "'Press Start 2P', cursive",
-    "'VT323', monospace",
-    "'Roboto Mono', monospace",
-    "'Source Code Pro', monospace"
-];
-
-// Add Google Fonts link
-const googleFontsLink = document.createElement('link');
-googleFontsLink.rel = 'stylesheet';
-googleFontsLink.href = 'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Roboto+Mono&family=Source+Code+Pro&display=swap';
-document.head.appendChild(googleFontsLink);
-
-// Basic function to change font of a specific element
-const changeElementFont = (element, fontFamily) => {
-    element.style.fontFamily = fontFamily;
-};
-
-// Function to change fonts randomly for each element
-const changeRandomFonts = () => {
-    [topRow, bottomRow, scrollBar].forEach(element => {
-        const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-        changeElementFont(element, randomFont);
-    });
-};
-
-// Function to cycle through fonts
-let currentFontIndex = 0;
-const cycleFonts = () => {
-    currentFontIndex = (currentFontIndex + 1) % fonts.length;
-    changeAllFonts(fonts[currentFontIndex]);
-};
-
-// Update the scroll event listener
-w.addEventListener('scroll', function() {
-    requestAnimationFrame(function() {
-        // Existing code remains...
-        
-        let scrollPercentage = (w.scrollY / m) * 100;
-        
-        // Change fonts at specific scroll positions
-        if (scrollPercentage > 20 && scrollPercentage < 25) cycleFonts();
-        if (scrollPercentage > 40 && scrollPercentage < 45) changeRandomFonts();
-        if (scrollPercentage > 60 && scrollPercentage < 65) cycleFonts();
-        if (scrollPercentage > 80 && scrollPercentage < 85) changeRandomFonts();
-        
-       
-    });
-});
-
-
-            
+}   
         </script>
 </body>
 
