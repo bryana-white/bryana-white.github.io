@@ -5,7 +5,8 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: black;
+    background-color: #000;
+    background-image:url("pictures/emo.jpg");
     
     line-height: 1.6;
 }
