@@ -6,16 +6,16 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #000;
-    background-image:url("pictures/emo.jpg");
+    background-image:url("pictures/green.jpg");
     
     line-height: 1.6;
 }
 
 .quiz-container {
-    background-color: white;
+    background-color:  rgb(26, 24, 24);
     border: dashed;
     border-radius: 1px;
-    color: black;
+    color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 500px;
@@ -24,7 +24,7 @@ body {
 }
 
 .quiz-title {
-    color: #333;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -37,13 +37,12 @@ body {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color:white;
     border: dashed;
-    border-color: black;
+    border-color: rgb(15, 90, 0);
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .option-btn:hover {
@@ -56,7 +55,7 @@ body {
 }
 
 .playlist-card {
-    background-color: #f4f4f4;
+    background-color: black;
     border-radius: 8px;
     padding: 20px;
     margin-top: 20px;

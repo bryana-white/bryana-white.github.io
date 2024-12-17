@@ -33,7 +33,7 @@
             overflow: hidden;
         }
         .custom-section {
-            background-color: black(50,50,50,0.5);
+            background-color: black;
             border: 3px solid white;
             margin: 10px 0;
             padding: 10px;
@@ -41,12 +41,16 @@
         }
 
         .custom-section2 {
-            background-color: black(50,50,50,0.5);
-            border: 3px solid white;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+            display: flex; /* Makes the container a flex container */
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    background-color: black;
+    border: 3px solid white;
+    margin: 10px 0;
+    padding: 30px;
+    border-radius: 5px;
+}
 
 
 
@@ -75,6 +79,11 @@
   text-decoration: none;
 }
 
+a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -85,7 +94,7 @@
             <!-- <img src="pictures/music whiz.gif" width="100%" height="10%" > -->
             <div class="custom-section">
                 <h3>About Me</h3>
-                <p>Living life to the fullest! Music, friends, and good times are what I'm all about. ☆彡</p>
+                <p>Enjoying some good tunes and hoping everyone else is doing the same. ☆彡</p>
             </div>
             
             <div class="custom-section">
@@ -113,18 +122,13 @@
             <img class="album-pic" src="pictures/link.jpg" width= "80px" height="80px" alt="album 3">
         </div>
 
-        <div class="custom-section" style="clear: both; margin-top: 20px;">
-            <h3>Take my music quiz</h3>
-            <a href="quiz.html" target="_blank"> it's right here </a>
+        <div class="custom-section2">
+            <a href="quiz.html" target="_blank"><h3>Take my music quiz</h3></a>
 
-    
+            <a href="chat.html" target="_blank"> <h3>chat room</h3></a>
+            
         </div>
 
-        <div class="custom-section2" style="clear: both; margin-top: 20px;"></div>
-
-            <h3>chat room</h3>
-            <a href="chat.html" target="_blank"> chat with me </a>
-        </div>
 
     </div>
 
