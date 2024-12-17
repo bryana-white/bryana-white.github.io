@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MySpace Profile</title>
     <style>
         body {
@@ -53,7 +54,7 @@
         }
         .chat-message .username {
             font-weight: bold;
-            color: #ff6;
+            color: rgb(82, 215, 55);
             margin-right: 10px;
         }
         a:link {
@@ -67,7 +68,7 @@
 
         <!-- New Chat Room Section -->
         <div id="chat-room">
-            <h3>MySpace Chat Room</h3>
+            <h3>Chat Room</h3>
             <div id="chat-messages"></div>
             <input type="text" id="username-input" placeholder="Enter your username">
             <input type="text" id="chat-input" placeholder="Type your message...">
@@ -132,13 +133,14 @@
             }
         });
 
-        // Add some fun MySpace-era auto-responses
+        // auto-responses
         const autoResponses = [
-            "rawr xD",
-            "omg that's so scene!",
-            "totally cool story bro",
-            "music is my life!",
-            "*~*eMo qUeEn*~*"
+            "Heyyyy:P",
+            "Did U hear that new FOB album?",
+            "Totally Lame",
+            "pete wentz girl 4eva <3",
+            "gtg my mom is calling. l8r",
+            "I'm boreddddd",
         ];
 
         // Simulate other users occasionally
@@ -163,8 +165,8 @@
             }
         }
 
-        // Simulate other users every 10-30 seconds
-        setInterval(simulateOtherUser, Math.floor(Math.random() * 20000) + 10000);
+        // Simulate other users every 5-10 seconds
+        setInterval(simulateOtherUser, Math.floor(Math.random() * 5000) + 5000);
     </script>
 </body>
 </html>
