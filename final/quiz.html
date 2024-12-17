@@ -19,72 +19,100 @@
         const QUIZ_DATA = {
             questions: [
                 {
-                    question: "What's your favorite mood?",
+                    question: "What's Your Favorite Color?",
                     options: [
-                        { text: "Energetic and upbeat", genre: "Pop" },
-                        { text: "Relaxed and chill", genre: "Electronic" },
-                        { text: "Deep and emotional", genre: "Indie" },
-                        { text: "Powerful and intense", genre: "Rock" },
-                        { text: "Smooth and cool", genre: "R&B" }
+                        { text: "Red", genre: "Pop" },
+                        { text: "Green", genre: "Emo" },
+                        { text: "Blue", genre: "Nu Metal" },
+                        { text: "Black", genre: "Rock" },
                     ]
                 },
                 {
                     question: "Pick your ideal weekend activity:",
                     options: [
                         { text: "Dancing at a club", genre: "Pop" },
-                        { text: "Listening to vinyl at home", genre: "Electronic" },
-                        { text: "Intimate acoustic concert", genre: "Indie" },
+                        { text: "Listening to vinyl at home", genre: "Emo" },
+                        { text: "Hanging Out With The Bros", genre: "Nu Metal" },
                         { text: "Big stadium rock show", genre: "Rock" },
-                        { text: "Lounging with friends", genre: "R&B" }
                     ]
-                }
+                },
+                {
+                    question: "What's your favorite season?",
+                    options: [
+                        { text: "Fall", genre: "Pop" },
+                        { text: "Winter", genre: "Emo" },
+                        { text: "Spring", genre: "Nu Metal" },
+                        { text: "Summer", genre: "Rock" },
+                    
+                    ]
+                },
+                {
+                    question: "Which dish would you pick?",
+                    options: [
+                        { text: "Pizza", genre: "Pop" },
+                        { text: "Hot Dog", genre: "Emo" },
+                        { text: "Pasta", genre: "Nu Metal" },
+                        { text: "Other", genre: "Rock" },
+                    
+                    ]
+                },
             ],
             playlists: {
                 "Pop": {
-                    name: "Pop Party Playlist",
-                    description: "Energetic pop hits to keep you dancing",
+                    name: "Y2K playlist",
+                    description: "You like to live in the past but you're having a great time",
                     tracks: [
-                        "Blinding Lights - The Weeknd",
-                        "Levitating - Dua Lipa",
-                        "Shape of You - Ed Sheeran"
+                        "Toxic - Britney Spears",
+                        "No Scrubs - TLC",
+                        "Shake It - Metro Station",
+                        "The Sweet Escape - Gwen Stefani, Akon",
+                        "Tik Tok - Ke$ha",
+                        "Unwritten - Natasha Bedingfield",
+                        "Bye Bye Bye - *NSYNC"
+
                     ]
                 },
-                "Electronic": {
-                    name: "Chill Electronic Vibes",
-                    description: "Smooth electronic beats for relaxation",
+                "Emo": {
+                    name: "Emo Hits",
+                    description: "It's not a playlist, It's an idea or whatever",
                     tracks: [
-                        "Midnight City - M83",
-                        "Faded - Alan Walker",
-                        "Strobe - Deadmau5"
+                        "I Write Sins Not Tragedies - Panic! At the Disco",
+                        "Helena - My Chemical Romance",
+                        "Thnks fr th mmrs - Fall Out Boy",
+                        "Misery Buisness - Paramore",
+                        "The Kill - Thirty Seconds To Mars",
+                        "Dirty Little Secret - All-American Rejects",
+                        "King For A Day - Pierce The Veil, Kellin Quinn",
                     ]
                 },
-                "Indie": {
-                    name: "Indie Soul Sounds",
-                    description: "Soulful alternative and indie tracks",
+                "Nu Metal": {
+                    name: "Nu Metal Bangers",
+                    description: "You just need to let out a scream and a couple of head bangs",
                     tracks: [
-                        "Take Me To Church - Hozier",
-                        "Ho Hey - The Lumineers",
-                        "Budapest - George Ezra"
+                        "Breaking the Habit - Linkin Park",
+                        "Animal I Have Become - Three Days Grace",
+                        "Chop Suey - System Of A Down",
+                        "Closer - Nine Inch Nails",
+                        "Freak On A Leash - Korn",
+                        "Break Stuff - Limp Bizkit",
+                        "Bring Me To Life - Evanescence"
                     ]
                 },
                 "Rock": {
                     name: "Classic Rock Anthems",
-                    description: "Powerful rock tracks to fuel your spirit",
+                    description: "Nothing like some classic rock tunes and a long drive down the coast",
                     tracks: [
-                        "Livin' on a Prayer - Bon Jovi",
-                        "Sweet Child O' Mine - Guns N' Roses",
-                        "Don't Stop Believin' - Journey"
+                        "You Give Love A Bad Name - Bon Jovi",
+                        "Hotel California - Eagles",
+                        "Man In the Box - Alice In Chains",
+                        "Someday - Nickelback",
+                        "Higher - Creed",
+                        "Like A Stone - Audioslave",
+                        "(Don't Fear) The Reaper - Blue Oyster Cult",
+
                     ]
                 },
-                "R&B": {
-                    name: "Smooth R&B Grooves",
-                    description: "Cool and sultry R&B tracks",
-                    tracks: [
-                        "Ordinary People - John Legend",
-                        "No Diggity - Blackstreet",
-                        "Killing Me Softly - The Fugees"
-                    ]
-                }
+                
             }
         };
 
@@ -98,7 +126,7 @@
                     "Electronic": 0, 
                     "Indie": 0, 
                     "Rock": 0, 
-                    "R&B": 0
+            
                 };
                 this.init();
             }
