@@ -1,11 +1,11 @@
-body{
+body {
   margin: 0 auto;
   font-family: 'Courier New', Courier, monospace;
   background: black;
   color: greenyellow;
 }
 
-#header{
+#header {
   position: fixed;
   top: 20px;
 }
@@ -28,18 +28,18 @@ body{
   display: inline-block;
 }
 
-a{
+a {
   color: greenyellow;
 }
 
-a:hover{
+a:hover {
   color: white;
 }
 
-.container{
+.container {
   animation-duration: 3s;
   animation-name: slidein;
-text-align: center;
+  text-align: center;
   display: inline-block;
   border-style: dotted;
   background-color: black;
@@ -64,9 +64,7 @@ text-align: center;
   }
 }
 
-#footer{
+#footer {
   position: fixed;
   bottom: 20px;
 }
-
-
