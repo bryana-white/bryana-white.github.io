@@ -7,7 +7,9 @@ body {
 
 #header {
   position: fixed;
+  animation: float 3s ease-in-out infinite;
   top: 20px;
+  text-align: center;
 }
 
 .links {
@@ -67,4 +69,19 @@ a:hover {
 #footer {
   position: fixed;
   bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
