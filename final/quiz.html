@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Taste Playlist Generator</title>
-    <link rel="stylesheet" href="style.css"> 
-    
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <div class="quiz-container" id="quizContainer">
-        <img src="pictures/logo.gif" width="100%" height="60%" >
+        <img src="pictures/logo.gif" width="100%" height="60%">
         <div id="quizContent"></div>
     </div>
 
@@ -42,7 +44,7 @@
                         { text: "Winter", genre: "Emo" },
                         { text: "Spring", genre: "Nu Metal" },
                         { text: "Summer", genre: "Rock" },
-                    
+
                     ]
                 },
                 {
@@ -52,7 +54,7 @@
                         { text: "Hot Dog", genre: "Emo" },
                         { text: "Pasta", genre: "Nu Metal" },
                         { text: "Other", genre: "Rock" },
-                    
+
                     ]
                 },
             ],
@@ -111,7 +113,7 @@
 
                     ]
                 },
-                
+
             }
         };
 
@@ -121,11 +123,11 @@
                 this.quizData = quizData;
                 this.currentQuestionIndex = 0;
                 this.genreScores = {
-                    "Pop": 0, 
-                    "Emo": 0, 
-                    "Nu Metal": 0, 
-                    "Rock": 0, 
-            
+                    "Pop": 0,
+                    "Emo": 0,
+                    "Nu Metal": 0,
+                    "Rock": 0,
+
                 };
                 this.init();
             }
@@ -137,7 +139,7 @@
             renderQuestion() {
                 const currentQuestion = this.quizData.questions[this.currentQuestionIndex];
                 const quizContent = document.getElementById('quizContent');
-                
+
                 // Use template literals safely
                 quizContent.innerHTML = `
                     <div class="question">
@@ -180,7 +182,7 @@
 
             generatePlaylist() {
                 // Find the genre with the highest score
-                const topGenre = Object.keys(this.genreScores).reduce((a, b) => 
+                const topGenre = Object.keys(this.genreScores).reduce((a, b) =>
                     this.genreScores[a] > this.genreScores[b] ? a : b
                 );
 
@@ -215,8 +217,8 @@
             new MusicQuiz(quizContainer, QUIZ_DATA);
         });
 
-         // custom cursor 
-         document.addEventListener('mousemove', function(e) {
+        // custom cursor 
+        document.addEventListener('mousemove', function (e) {
             var cursor = document.createElement('div');
             cursor.style.position = 'fixed';
             cursor.style.left = e.clientX + 'px';
@@ -227,11 +229,12 @@
             cursor.style.backgroundColor = 'rgba(255,255,255,0.5)';
             cursor.style.pointerEvents = 'none';
             document.body.appendChild(cursor);
-            
+
             setTimeout(() => {
                 document.body.removeChild(cursor);
             }, 500);
         });
     </script>
 </body>
+
 </html>

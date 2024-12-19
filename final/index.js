@@ -77,10 +77,10 @@ class MusicQuiz {
         this.quizData = quizData;
         this.currentQuestionIndex = 0;
         this.genreScores = {
-            "Pop": 0, 
-            "Electronic": 0, 
-            "Indie": 0, 
-            "Rock": 0, 
+            "Pop": 0,
+            "Electronic": 0,
+            "Indie": 0,
+            "Rock": 0,
             "R&B": 0
         };
         this.init();
@@ -93,7 +93,7 @@ class MusicQuiz {
     renderQuestion() {
         const currentQuestion = this.quizData.questions[this.currentQuestionIndex];
         const quizContent = document.getElementById('quizContent');
-        
+
         // Use template literals safely
         quizContent.innerHTML = `
             <div class="question">
@@ -136,7 +136,7 @@ class MusicQuiz {
 
     generatePlaylist() {
         // Find the genre with the highest score
-        const topGenre = Object.keys(this.genreScores).reduce((a, b) => 
+        const topGenre = Object.keys(this.genreScores).reduce((a, b) =>
             this.genreScores[a] > this.genreScores[b] ? a : b
         );
 

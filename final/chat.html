@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <style>
         body {
             background-color: #000;
-            background-image:url("pictures/emo.jpg");
+            background-image: url("pictures/emo.jpg");
             color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,6 +16,7 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
         #profile-container {
             width: 800px;
             margin: 20px auto;
@@ -22,13 +24,14 @@
             padding: 20px;
             border: 3px solid white;
         }
-    
+
         #chat-room {
             margin-top: 20px;
             background-color: black;
             border: 2px solid white;
             padding: 10px;
         }
+
         #chat-messages {
             height: 300px;
             overflow-y: scroll;
@@ -36,6 +39,7 @@
             padding: 10px;
             margin-bottom: 10px;
         }
+
         #chat-input {
             width: 100%;
             background-color: black;
@@ -43,37 +47,42 @@
             border: 2px solid white;
             padding: 5px;
         }
+
         .chat-message {
             margin-bottom: 10px;
             padding: 5px;
-            background-color: rgba(100,100,100,0.3);
+            background-color: rgba(100, 100, 100, 0.3);
         }
+
         .chat-message.system {
             color: #aaa;
             font-style: italic;
         }
+
         .chat-message .username {
             font-weight: bold;
             color: rgb(82, 215, 55);
             margin-right: 10px;
         }
+
         a:link {
             color: white;
             text-decoration: none;
         }
     </style>
 </head>
-<body>
-        
 
-        <!-- New Chat Room Section -->
-        <div id="chat-room">
-            <h3>Chat Room</h3>
-            <div id="chat-messages"></div>
-            <input type="text" id="username-input" placeholder="Enter your username">
-            <input type="text" id="chat-input" placeholder="Type your message...">
-        </div>
-    
+<body>
+
+
+    <!-- New Chat Room Section -->
+    <div id="chat-room">
+        <h3>Chat Room</h3>
+        <div id="chat-messages"></div>
+        <input type="text" id="username-input" placeholder="Enter your username">
+        <input type="text" id="chat-input" placeholder="Type your message...">
+    </div>
+
 
     <script>
         // Chat Room Functionality
@@ -88,7 +97,7 @@
         function addMessage(message, type = 'user') {
             const messageElement = document.createElement('div');
             messageElement.classList.add('chat-message');
-            
+
             if (type === 'system') {
                 messageElement.classList.add('system');
                 messageElement.textContent = message;
@@ -96,11 +105,11 @@
                 const usernameSpan = document.createElement('span');
                 usernameSpan.classList.add('username');
                 usernameSpan.textContent = username + ': ';
-                
+
                 messageElement.appendChild(usernameSpan);
                 messageElement.appendChild(document.createTextNode(message));
             }
-            
+
             chatMessages.appendChild(messageElement);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
@@ -149,17 +158,17 @@
                 const otherUsernames = ['Scene Queen', 'Punk Rocker', 'Emo Kid', 'Music Guru'];
                 const randomUsername = otherUsernames[Math.floor(Math.random() * otherUsernames.length)];
                 const randomMessage = autoResponses[Math.floor(Math.random() * autoResponses.length)];
-                
+
                 const messageElement = document.createElement('div');
                 messageElement.classList.add('chat-message');
-                
+
                 const usernameSpan = document.createElement('span');
                 usernameSpan.classList.add('username');
                 usernameSpan.textContent = randomUsername + ': ';
-                
+
                 messageElement.appendChild(usernameSpan);
                 messageElement.appendChild(document.createTextNode(randomMessage));
-                
+
                 chatMessages.appendChild(messageElement);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
@@ -168,8 +177,8 @@
         // Simulate other users every 5-10 seconds
         setInterval(simulateOtherUser, Math.floor(Math.random() * 5000) + 5000);
 
-         // custom cursor 
-         document.addEventListener('mousemove', function(e) {
+        // custom cursor 
+        document.addEventListener('mousemove', function (e) {
             var cursor = document.createElement('div');
             cursor.style.position = 'fixed';
             cursor.style.left = e.clientX + 'px';
@@ -180,11 +189,12 @@
             cursor.style.backgroundColor = 'rgba(255,255,255,0.5)';
             cursor.style.pointerEvents = 'none';
             document.body.appendChild(cursor);
-            
+
             setTimeout(() => {
                 document.body.removeChild(cursor);
             }, 500);
         });
     </script>
 </body>
+
 </html>
