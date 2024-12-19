@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+    body{
+  margin: 0 auto;
+  font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: greenyellow;
+}
+
+#header{
+  position: fixed;
+  top: 20px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  background-color: black;
+  color: yellowgreen;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-style: dotted;
+  transition: all 0.3s ease;
+  margin-right: 50%;
+  display: inline-block;
+}
+
+a{
+  color: greenyellow;
+ 
+}
+
+
+a:hover{
+  color: white;
+}
+    
+.title{
+  font-size: 18px;
+  min-height:88vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 1rem;
+    
+}
+
+.response{
+  margin: 0 auto;
+  padding:1em;
+  max-width: 700px;
+  background-color: black;
+  border-style: dotted;
+  margin-bottom: 6rem;
+ 
+}
+
+#footer{
+  position: fixed;
+  bottom: 20px;
+}
+
+canvas {
+  margin: 0;
+}
+
+</style>
+
+<body>
+    <div id="header">
+
+        <header>⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀Week⠀⠀⠀⠀⠀⠀⠀⣼⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣶⡄
+          ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡴⠖⢂⣽⣿⣿⣷⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⠟
+          ⠀⠀⠀⠀⣀⣤⡶⢿⣋⣥⣤⣶⣿⣿⣿⣿⣿⣿⣿⣶⣤⣄⣀⡀⢀⣠⣾⠿⠋⠀
+          ⠀⢀⣴⣿⠟⠉⠀⠀⠀⠈⠉⠛⠻⣿⣿⣿⣿⡿⠛⠋⠉⣀⣤⠶⠟⠋⠁⠀⠀⠀
+          ⢰⣿⡟⠁⠀⠀⠀⣷⠀⠀⠀⠀⠀⠈⣿⣿Four⣟⣀⡤⠖⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠘⠿⣧⣀⡠⠤⢾⣿⣷⠤⠄⠀⠀⠀⢹⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠉⠀⠀⠀⡿⠁⠀⠀⠀⠀⠀⠈⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </header>
+         </div>
+    
+         <div class="title">
+    <p>Week 4 Assignment</p>
+    <div class="response">
+      <p>The website I chose was <a href="https://taper.badquar.to/11/beauty_and_grace.html ">Beauty and Grace.</a> 
+        The languages used here are HTML, CSS, and Javascript. From what I can see, the code used on this site is not too complex, but the way that it's used creatively is unique.
+    When the user scrolls on the site, text appears and it shows two lines of text at the footer and the header. 
+    I think that the code here is very interactive, and it opens the way for creative projects.
+</p>
+<P>It would appear that the main language used is Javascript, and this allows the user to control the text with their mouse.</P>
+    </div>
+
+    <div><a href="index.html" class="link">Home</a>
+    </div>
+
+    <div id="footer">
+        ⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀Week⠀⠀⠀⠀⠀⠀⠀⣼⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣶⡄
+            ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡴⠖⢂⣽⣿⣿⣷⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⠟
+            ⠀⠀⠀⠀⣀⣤⡶⢿⣋⣥⣤⣶⣿⣿⣿⣿⣿⣿⣿⣶⣤⣄⣀⡀⢀⣠⣾⠿⠋⠀
+            ⠀⢀⣴⣿⠟⠉⠀⠀⠀⠈⠉⠛⠻⣿⣿⣿⣿⡿⠛⠋⠉⣀⣤⠶⠟⠋⠁⠀⠀⠀
+            ⢰⣿⡟⠁⠀⠀⠀⣷⠀⠀⠀⠀⠀⠈⣿⣿Four⣟⣀⡤⠖⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠘⠿⣧⣀⡠⠤⢾⣿⣷⠤⠄⠀⠀⠀⢹⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠉⠀⠀⠀⡿⠁⠀⠀⠀⠀⠀⠈⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+    <style>
+        body { margin:0 ; overflow:hidden ; background: black; color: greenyellow; font-family: 'Courier New', Courier, monospace; overflow-y:scroll}
+        #sb{position:relative;height:9000px;display:block}#bar{width:100%;height:0;background-color:black;text-align:center}
+        #c{display:flex;align-items:center;height:calc(100vh - 45px);position:fixed;top:45px;left:0;width:100%;overflow:hidden;white-space:nowrap;padding:0}
+        #bR,#tR{font-size:55vh;white-space:nowrap;position:absolute}
+        #tR{top:0;left:0;line-height:100%;padding-left:100%}
+        #bR{text-align:right;top:40vh;right:0;padding-right:100%}
+        #bR span{min-width:100px}header{position:fixed;width:100%} 
+       
+   </style>
+
+   <!-- scrolling link  -->
+    <div id="sb"></div>
+    <div id="c"><div id="tR"></div><div id="bR"></div><div id="bar">[scroll]</div>
+</div>
+        
+        <script>
+
+            
+// This code was referenced from (https://taper.badquar.to/11/beauty_and_grace.html by Zach Whalen)
+let u=0;let word="Enter";let rL=["scroll"];const mR=Math.random;const mF=Math.floor;const w=window;const l=document.getElementById("bar");const de=document.documentElement;const m=8000-de.clientHeight*(de.clientHeight/de.clientWidth);const tr=document.getElementById("tR");const br=document.getElementById("bR");w.addEventListener('scroll',function(){requestAnimationFrame(function(){if(w.innerWidth>0){while(br.offsetWidth<w.innerWidth*20){let ns=document.createElement("span");ns.appendChild(document.createTextNode(phrase));br.appendChild(ns);tr.appendChild(ns.cloneNode(true))}}if(w.scrollY>m/2){u=1;l.innerHTML="["+rL[mF(mR()*rL.length)]+"]"}if(w.scrollY==0&u==1){phrase=dc(phrase);br.innerHTML='';tr.innerHTML='';u=0}let r=(w.scrollY)/m;l.style.height="calc("+(r*100).toString()+"vh - 45px)";doof(fd(r));tr.style.left= -w.scrollY+"px";tr.style.fontSize=55-(r*55)+"vh"})});const doof=function(f){br.style.fontSize=f[0];br.style.top="calc("+f[1]+" - 45px)";br.style.right=f[2]};const fd=(r)=>[((55-(r*55))<1?1:(55-(r*55)))+"vh",40+(r*60)+"vh",mF(-w.scrollY)+"px"];const dc=(s)=>{let a=s.split(""),l=a.length,o=a.splice(mF(mR()*l),3);o.forEach(function(i){a.splice(mF(mR()*l),0,i)});return a.join("")};
+
+let phrases = [
+    "0101010101",
+    "101000101",
+];
+
+// Modify the existing variables
+let currentPhraseIndex = 0;
+let phrase = phrases[currentPhraseIndex];
+
+
+// hopefully this changes the scroll text 
+
+const changeText = () => {
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+    word = words[currentWordIndex]
+    
+ };
+
+// Modify the scroll event listener
+w.addEventListener('scroll', function() {
+    requestAnimationFrame(function() {
+        // Existing code remains the same
+        if (w.innerWidth > 0) {
+            while (br.offsetWidth < w.innerWidth * 20) {
+                let ns = document.createElement("span");
+                ns.appendChild(document.createTextNode(phrase));
+                br.appendChild(ns);
+                tr.appendChild(ns.cloneNode(true));
+            }
+        }
+        
+        // Add text changing based on scroll position
+        let scrollPercentage = (w.scrollY / m) * 100;
+        
+        // Change text at certain scroll percentages
+        if (scrollPercentage > 20 && scrollPercentage < 25) changeText();
+        if (scrollPercentage > 40 && scrollPercentage < 45) changeText();
+        if (scrollPercentage > 60 && scrollPercentage < 65) changeText();
+        if (scrollPercentage > 80 && scrollPercentage < 85) changeText();
+        
+        // Rest of the existing code
+        if (w.scrollY > m/2) {
+            u = 1;
+            l.innerHTML = "[" + rL[mF(mR() * rL.length)] + "]";
+        }
+        
+        if (w.scrollY == 0 && u == 1) {
+            phrase = dc(phrase);
+            br.innerHTML = '';
+            tr.innerHTML = '';
+            u = 0;
+        }
+        
+        let r = (w.scrollY) / m;
+        l.style.height = "calc(" + (r * 100).toString() + "vh - 45px)";
+        doof(fd(r));
+        tr.style.left = -w.scrollY + "px";
+        tr.style.fontSize = 55 - (r * 55) + "vh";
+    });
+});
+// First, let's add an array of colors to cycle through
+const colors = [
+    '#39FF14',  // Neon Green
+    '#FDFEFE',  // White
+    '#03cdff' // Blue
+    
+];
+
+let currentColorIndex = 0;
+
+// Add a function to change color
+const changeColor = () => {
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    const newColor = colors[currentColorIndex];
+    
+    tr.style.color = newColor;
+    br.style.color = newColor;
+    c.style.color = newColor;
+    tR.style.color = newColor;
+    bR.style.color = newColor;
+    bar.style.color = newColor;
+    
+};
+
+
+w.addEventListener('scroll', function() {
+    requestAnimationFrame(function() {
+   
+        // Add color changing based on scroll position
+        let scrollPercentage = (w.scrollY / m) * 100;
+        
+        // Smooth color transition based on scroll position
+        const colorIndex = Math.floor((scrollPercentage / 100) * colors.length);
+        const nextColorIndex = (colorIndex + 1) % colors.length;
+        
+        const colorProgress = (scrollPercentage / 100) * colors.length - colorIndex;
+        
+        const currentColor = colors[colorIndex];
+        const nextColor = colors[nextColorIndex];
+    
+        // 'interpolated created that smooth transition between the colors'
+        const interpolatedColor = interpolateColors(currentColor, nextColor, colorProgress);
+        
+    
+        tr.style.color = interpolatedColor;
+        br.style.color = interpolatedColor;
+        c.style.color = interpolatedColor;
+       tR.style.color = interpolatedColor;
+       bR.style.color = interpolatedColor;
+        bar.style.color = interpolatedColor;
+        
+
+    });
+});
+
+// This helps interpolate between two colors
+function interpolateColors(color1, color2, factor) {
+    if (factor <= 0) return color1;
+    if (factor >= 1) return color2;
+
+    const hex1 = color1.replace('#', '');
+    const hex2 = color2.replace('#', '');
+
+    const r1 = parseInt(hex1.substr(0, 2), 16);
+    const g1 = parseInt(hex1.substr(2, 2), 16);
+    const b1 = parseInt(hex1.substr(4, 2), 16);
+
+    const r2 = parseInt(hex2.substr(0, 2), 16);
+    const g2 = parseInt(hex2.substr(2, 2), 16);
+    const b2 = parseInt(hex2.substr(4, 2), 16);
+
+    const r = Math.round(r1 + factor * (r2 - r1));
+    const g = Math.round(g1 + factor * (g2 - g1));
+    const b = Math.round(b1 + factor * (b2 - b1));
+
+    return `#${(r << 16 | g << 8 | b).toString(16).padStart(6, '0')}`;
+}   
+        </script>
+</body>
+
+
+</html>
